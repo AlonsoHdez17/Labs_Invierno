@@ -1,16 +1,5 @@
-/*$(".agregar").on('click',function() {
-
-    let super = $("<div>")
-    super.text(super)
-    $("Lista").append(super)
-      <button class = "check"> check </button>
-      <button class = "delete"> delet </button>
-
-    
-})*/
-
-$('.agregar').click(function(e){
-    e.preventDefault();
+$('.agregar').on('click',function(hola) {
+    hola.preventDefault();
     var check = $('<input type="button" value="Check" class="checar"/>');
     var deletee = $('<input type="button" value="Delete" class="del"/>');
     var text = $('<p>'+$('#newText').val()+'</p>');
@@ -19,9 +8,10 @@ $('.agregar').click(function(e){
     li.append(check);
     li.append(deletee);
     $('.Lista').append(li);
+
+    
 });
-//<button class = "check"> check </button>
-//<button class = "delete"> delet </button>
+
 
 
 $(".Lista").on('click','.del', function(){
@@ -30,5 +20,5 @@ $(".Lista").on('click','.del', function(){
 
    $(".Lista").on('click','.checar', function(){
 
-    $(this).prev().toggleClass('chec')
+    $(this).closest(".lis").toggleClass('chec')
    })
