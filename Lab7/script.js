@@ -37,9 +37,29 @@ $(document).ready(function() {
         animalDiv.append(p)
         animalDiv.append(animalImage)
     $("#animals").append(animalDiv)
+
+
      }
+     $("#animals").on("click", ".animal-item", function() {
+        animalImage.attr("src",results[i].images.fixed_height.url )
+        animalImage.attr("data-state","animate")
+
+     })
+
     }) 
     //alert(queryURL)
+
     })
      
+
+    $('#add-animal').on('click',function(hola) {
+        hola.preventDefault();
+        var text = $('<p>'+$('#animal-input').val()+'</p>');
+        var li = $('<div class="button,input"></div>');
+        li.append(text);
+        $('.animals').append(li);
+    
+        
+    })
+
     });
